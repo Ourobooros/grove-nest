@@ -306,7 +306,6 @@ struct Interface *attachSensorToUartBus(void *_board,int port,int speed,BYTE mod
 			p->port = NULL;
 		}	
 	}
-
 	if(p->port == NULL)
 	{	
 		p->port = (GrovePort *) malloc(sizeof (GrovePort));

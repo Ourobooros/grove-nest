@@ -65,6 +65,7 @@ extern const void *Accel;
 extern const void *Rgb;
 extern const void *Rht03;
 extern const void *Oled;
+extern const void * Uart_sensor;
 
 extern unsigned char flag;
 

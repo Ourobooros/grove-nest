@@ -3,51 +3,36 @@
 
 void FlyportTask()
 {	
-	// GROVE devices
+	// GROVE board
 	void *board = new (Board);
-	
-	// Digital Output
-	void *led1 = new (Dig_io, OUT);
-	void *pwmLed1 = new (Dig_io, PWM, 1);
-	
+
+	// GROVE devices
 	// Digital Input
-	void *button1 = new (Dig_io, IN);
-	
-	// Analog Input
-	void *analogIn1 = new (An_i);
+	void *waterSensor = new (Dig_io, IN);
 	
 	// Attach Devices
-	attachSensorToBoard(board, led1, DIG1);
-	attachSensorToBoard(board, pwmLed1, DIG2);
-	attachSensorToBoard(board, button1, DIG3);
-	attachSensorToBoard(board, analogIn1, AN1);
-	
-	// Configure PWM
-	set(pwmLed1, FREQUENCY, 220.50);
-	set(pwmLed1, DUTY, 35.20);
-	set(pwmLed1, ON);
+	attachSensorToBoard(board, waterSensor, DIG4);
 	
 	// Connection to Network
+	#if defined (FLYPORT)
 	WFConnect(WF_DEFAULT);
 	while (WFStatus != CONNECTED);
+	#endif
+	#if defined (FLYPORTETH)
+	while(!MACLinked);
+	#endif
 	UARTWrite(1,"Flyport connected... hello world!\r\n");
 	vTaskDelay(200);
 	
-	float anVal = 0.0;
-	
 	while(1)
 	{
-		anVal = get(analogIn1);
-		
-		set(pwmLed1, DUTY, ((anVal * 100)/1023));
-		
-		if( get(button1) == 0)
+		if(get(waterSensor))
 		{
-			set(led1, OFF);
+			IOPut(p21, ON);
 		}
 		else
 		{
-			set(led1, ON);
+			IOPut(p21, OFF);
 		}
 	}
 }
