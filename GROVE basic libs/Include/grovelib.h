@@ -62,7 +62,7 @@ int attachToBoard(void *,void *,int);
 int configure(void *,...);
 int set(void *,...);
 float get(void *, ...);
-unsigned char readflag(void);
+unsigned char readError(void);
 
 struct SensorClass
 {

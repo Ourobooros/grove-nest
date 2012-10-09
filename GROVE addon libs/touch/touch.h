@@ -2,15 +2,15 @@
 extern const void *Touch;
 
 //Touch sensor address
-#define TOUCHADD0 	0xB4
-#define PAD1		1
-#define PAD2		2
-#define PAD3		4
-#define PAD4		8
-#define PAD5		16
-#define PAD6		32
-#define PAD7		64
-#define PAD8		128
+#define TOUCH_ADDR0 	0xB4
+#define PAD1			1
+#define PAD2			2
+#define PAD3			4
+#define PAD4			8
+#define PAD5			16
+#define PAD6			32
+#define PAD7			64
+#define PAD8			128
 
 // MPR121 Register Defines
 

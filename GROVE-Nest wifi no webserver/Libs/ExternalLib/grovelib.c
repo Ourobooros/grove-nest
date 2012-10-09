@@ -149,7 +149,7 @@ float get(void *self, ...)
 }
 
 
-unsigned char readflag(void)
+unsigned char readError(void)
 {
 	return flag;
 }

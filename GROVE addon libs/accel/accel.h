@@ -2,7 +2,7 @@
 extern const void *Accel;
 
 //Accelerometer sensor addresses and constants
-#define ACCADD0   0x98
+#define ACC_ADDR0   0x98
 #define ACC_X		0
 #define ACC_Y		1
 #define ACC_Z		2

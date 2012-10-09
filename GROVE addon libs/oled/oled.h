@@ -2,14 +2,14 @@
 extern const void *Oled;
 
 //Oled sensor addresses and constants
-#define OLEDADD0   	0x78
-#define WHITE		0xA7
-#define BLACK		0xA6
-#define H			0x00
-#define V			0x00
-#define P			0x02
-#define STRING		0x00
-#define IMAGE		0x01
+#define OLED_ADDR0   	0x78
+#define WHITE			0xA7
+#define BLACK			0xA6
+#define H				0x00
+#define V				0x00
+#define P				0x02
+#define STRING			0x00
+#define IMAGE			0x01
 
 #define DISPLAY_OFF		0XAE
 #define DISPLAY_ON		0XAF

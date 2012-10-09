@@ -5,7 +5,7 @@ extern const void *Gyro;
 #define GROVE3AXIS_H
 
 //Gyro sensor addresses and constants
-#define GYROADD0 	0xD0
+#define GYRO_ADDR0 	0xD0
 #define GYRO_TEMP	0
 #define GYRO_X		1
 #define GYRO_Y		2
